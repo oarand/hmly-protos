@@ -193,13 +193,15 @@ button:focus,
 
 
 
-/* ... (mantén el resto del CSS sin cambios) ... */
-
-/* Bottom Section */
 .bottom-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.bottom-section > * {
+    flex: 1 1 22%; /* Ajusta el porcentaje según sea necesario */
+    margin: 0.5rem; /* Ajusta el margen según sea necesario */
 }
 
 .help-faq-container {
