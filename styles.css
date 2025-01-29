@@ -56,16 +56,89 @@ body {
     margin-bottom: 1rem;
 }
 
+/* ... (mantén el CSS anterior sin cambios) ... */
+
 /* Card Styles */
-.card {
+.card, .small-card, .medium-card, .large-card {
     border: 2px solid rgba(64, 224, 208, 0.2);
     border-radius: 1rem;
     padding: 1.5rem;
     background-color: white;
-    height: 200px; /* Aumentamos la altura de las tarjetas */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card {
+    height: 200px;
     display: flex;
     flex-direction: column;
 }
+
+/* ... (mantén los estilos internos de las tarjetas sin cambios) ... */
+
+/* Hover Effects */
+.card:hover,
+.small-card:hover,
+.medium-card:hover,
+.large-card:hover {
+    box-shadow: 0 15px 30px rgba(10, 75, 120, 0.2), 0 10px 10px rgba(10, 75, 120, 0.1);
+    transform: translateY(-5px);
+    border-color: var(--turquoise);
+}
+
+.card::after,
+.small-card::after,
+.medium-card::after,
+.large-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg, var(--turquoise) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.card:hover::after,
+.small-card:hover::after,
+.medium-card:hover::after,
+.large-card:hover::after {
+    opacity: 0.1;
+}
+
+/* Efecto adicional para el contenido interno de las tarjetas */
+.card:hover .icon-circle,
+.small-card:hover .icon-circle,
+.medium-card:hover .icon-circle,
+.large-card:hover .icon-circle {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(64, 224, 208, 0.5);
+}
+
+.card:hover .card-text h2,
+.small-card:hover span,
+.medium-card:hover span,
+.large-card:hover span {
+    color: var(--bbva-blue);
+    text-shadow: 1px 1px 2px rgba(64, 224, 208, 0.3);
+}
+
+/* Accessibility */
+button:focus,
+.card:focus-within,
+.small-card:focus-within,
+.medium-card:focus-within,
+.large-card:focus-within {
+    outline: 3px solid var(--bbva-blue);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(10, 75, 120, 0.2);
+}
+
+/* ... (mantén el resto del CSS sin cambios) ... */
 
 .card-content {
     display: flex;
