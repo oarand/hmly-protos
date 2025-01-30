@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add applications</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Add applications</h1>
+        <button class="close-button" aria-label="Close">✕</button>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="tabs">
+                <button class="tab active" data-tab="search">
+                    <svg viewBox="0 0 24 24" class="icon"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                    Search by name
+                </button>
+                <button class="tab" data-tab="all">
+                    <svg viewBox="0 0 24 24" class="icon"><path d="M12 4v16m8-8H4" /></svg>
+                    All applications
+                </button>
+            </div>
+
+            <div class="tab-content" id="searchTab">
+                <div class="search-container">
+                    <svg viewBox="0 0 24 24" class="search-icon"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                    <input type="text" placeholder="Search for an application by name..." class="search-input">
+                </div>
+            </div>
+
+            <div class="tab-content hidden" id="allTab">
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="appType" value="authorized" checked>
+                        <svg viewBox="0 0 24 24" class="icon green"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        Authorized applications
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="appType" value="reference">
+                        <svg viewBox="0 0 24 24" class="icon blue"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                        Applications authorized for a reference user
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="appType" value="unauthorized">
+                        <svg viewBox="0 0 24 24" class="icon red"><path d="M12 15v2m0 0v3m0-3h3m-3 0H9m1-9a2 2 0 012 2c0 .6-.25 1.15-.65 1.55L9 13v2h6v-2l-2.35-2.45A2.5 2.5 0 0112 9z" /></svg>
+                        Unauthorized applications
+                    </label>
+                </div>
+            </div>
+
+            <div class="selection-info">
+                <p>Select the applications you want to add by checking the boxes next to their names.</p>
+            </div>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Application</th>
+                        <th>Select</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Application Name 1</td>
+                        <td>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="app1">
+                                <span class="checkmark"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Application Name 2</td>
+                        <td>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="app2">
+                                <span class="checkmark"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Application Name 3</td>
+                        <td>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="app3">
+                                <span class="checkmark"></span>
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="action-buttons">
+            <button class="confirm-button">Confirm selection</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

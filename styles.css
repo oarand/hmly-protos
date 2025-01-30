@@ -1,7 +1,7 @@
 /* Reset y variables */
 :root {
-    --bbva-blue: #0A4B78;
-    --turquoise: #40E0D0;
+    --bbva-blue: #004481;
+    --turquoise: #028484;
     --orange: #FFA500;
     --gold: #DAA520;
     --gray: #666666;
@@ -60,7 +60,7 @@ body {
 
 /* Card Styles */
 .card, .small-card, .medium-card, .large-card {
-    border: 2px solid rgba(64, 224, 208, 0.2);
+    border: 2px solid rgba(2, 165, 165, 0.2);
     border-radius: 1rem;
     padding: 1.5rem;
     background-color: white;
